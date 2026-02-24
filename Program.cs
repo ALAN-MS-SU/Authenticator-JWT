@@ -4,6 +4,7 @@ using CaixaAPI.Model.TOTP;
 using Microsoft.EntityFrameworkCore;
 using CaixaAPI.Middleware;
 using CaixaAPI.Model.TOTP.Access;
+using CaixaAPI.Model.JWT.Cookie;
 using CaixaAPI.Model.Argon;
 using StackExchange.Redis;
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,7 @@ builder.Services.AddScoped<TOTP>();
 builder.Services.AddScoped<TFAccess>();
 builder.Services.AddScoped<SIAccess>();
 builder.Services.AddScoped<PAccess>();
+builder.Services.AddScoped<Cookie>();
 builder.Services.AddDbContext<Context>(options =>
     options.UseNpgsql(
         builder.Configuration.GetConnectionString("Postgres") ??
