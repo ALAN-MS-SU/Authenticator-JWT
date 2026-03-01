@@ -157,6 +157,8 @@ public class UserController(
         if (User == null) return Unauthorized("User not found.");
         Context.Users.Remove(User);
         await Context.SaveChangesAsync();
+        var Config = CookieBuilder.GetConfig();
+        Response.Cookies.Delete(Configuration["JWT:Name"]!,Config);
         return NoContent();
     }
 }
