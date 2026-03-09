@@ -2,6 +2,68 @@
 <h3>This project was made with .Net 10v</h3>
 <h1>About</h1>
 <h3>This project was created to work with the JWT and Authenticator App</h3>
+
+## API Routes
+
+### Create User
+```bash
+POST /User
+```
+
+### Sign In
+```bash
+POST /User/SignIn
+```
+
+### 2FA Login
+```bash
+POST /User/2FA
+```
+
+### Sign Out
+```bash
+HEAD /User
+```
+
+### Check User
+```bash
+GET /User/{Email}
+```
+
+### Get Profile
+```bash
+GET /User/Profile/{ID}
+```
+
+### Generate QR Code
+```bash
+GET /User/QrCode/{Email}
+```
+
+### Delete User
+```bash
+DELETE /User/{ID}
+```
+
+---
+
+## Password Routes
+
+### Start Password Reset
+```bash
+POST /User/Password/{Email}
+```
+
+### Password 2FA
+```bash
+POST /User/Password/2FA
+```
+
+### Change Password
+```bash
+PATCH /User/Password
+```
+
 <h1>How to start</h1>
 <h3>Git clone</h3>
 <pre><code>git clone https://github.com/ALAN-MS-SU/Authenticator-JWT.git</code></pre>
